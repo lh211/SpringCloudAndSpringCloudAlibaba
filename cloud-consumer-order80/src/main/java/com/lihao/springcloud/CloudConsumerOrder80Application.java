@@ -12,6 +12,8 @@ import org.springframework.cloud.netflix.ribbon.RibbonClient;
 public class CloudConsumerOrder80Application {
 
     public static void main(String[] args) {
+
+
         SpringApplication.run(CloudConsumerOrder80Application.class, args);
     }
 
