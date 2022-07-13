@@ -3,6 +3,7 @@ package com.lihao.springcloud.controller;
 import com.lihao.springcloud.entities.CommonResult;
 import com.lihao.springcloud.entities.payment;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,7 +16,7 @@ import javax.annotation.Resource;
 @RestController
 public class OrderController {
 
-    public static final String PAYMENT_URL = "http://localhost:8001";
+    public static final String PAYMENT_URL = "http://CLOUD-PROVIDER-PAYMENT8001";
 
     @Resource
     private RestTemplate restTemplate;
@@ -29,6 +30,8 @@ public class OrderController {
 
     @GetMapping("/consumer/payment/get/{id}")
     public CommonResult<payment> getPayment(@PathVariable("id") Long id){
+
+
         return restTemplate.getForObject(PAYMENT_URL+"/payment/get/"+id, CommonResult.class);
     }
 }
