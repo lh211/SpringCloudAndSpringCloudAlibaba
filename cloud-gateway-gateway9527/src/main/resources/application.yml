@@ -11,6 +11,8 @@ spring:
           uri: lb://CLOUD-PROVIDER-PAYMENT8001
           predicates:
             - Path= /payment/get/**
+          filters:
+            - MyParam = name
 
 #            - Header= X-Request-Id, \d+
 #      discovery:
