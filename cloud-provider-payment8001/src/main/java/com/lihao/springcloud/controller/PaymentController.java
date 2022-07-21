@@ -23,7 +23,7 @@ public class PaymentController {
 
 
     @PostMapping(value = "/payment/create")
-    public CommonResult create(@RequestBody  payment payment)
+    public CommonResult create(@RequestBody payment payment)
     {
         int result = paymentService.create(payment);
         log.info("*****插入结果："+result);
@@ -41,7 +41,7 @@ public class PaymentController {
     @GetMapping(value = "/payment/get/{id}")
     public CommonResult getPaymentById(@PathVariable("id") Long id) throws InterruptedException {
 
-        Thread.sleep(3000);
+//        Thread.sleep(3000);
         payment payment = paymentService.getPaymentById(id);
         log.info("*****查询结果");
 
