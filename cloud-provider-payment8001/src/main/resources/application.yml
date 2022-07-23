@@ -11,6 +11,16 @@ spring:
     url: jdbc:mysql://localhost:3306/db2019?useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
     password: 123456
+  zipkin:
+    base-url: http://192.168.126.128:9411/
+    discoveryClientEnabled: false
+    sender:
+        type: web # 设置使用 http 的方式传输数据
+
+
+  sleuth:
+    sampler:
+      probability: 1
 #  cloud:
 #    zookeeper:
 #      connect-string: 127.0.0.1:2181
@@ -30,3 +40,5 @@ eureka:
     fetchRegistry: true
     service-url:
       defaultZone: http://localhost:7001/eureka
+
+

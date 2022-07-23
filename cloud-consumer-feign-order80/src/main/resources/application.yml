@@ -2,7 +2,6 @@ server:
   port: 80
 
 
-
 eureka:
   client:
     register-with-eureka: false
@@ -10,7 +9,6 @@ eureka:
       defaultZone: http://localhost:7001/eureka
 
 
-##\u8BBE\u7F6Efeign\u5BA2\u6237\u7AEF \u8D85\u65F6\u65F6\u95F4 (OpenFeign\u9ED8\u8BA4\u652F\u6301ribbon) (\u5355\u4F4D\uFF1A\u6BEB\u79D2)
 #ribbon:
 #  #\u6307\u7684\u662F\u5EFA\u7ACB\u8FDE\u63A5\u6240\u7528\u7684\u65F6\u95F4\uFF0C\u9002\u7528\u4E8E\u7F51\u7EDC\u72B6\u51B5\u6B63\u5E38\u7684\u60C5\u51B5\u4E0B,\u4E24\u7AEF\u8FDE\u63A5\u6240\u7528\u7684\u65F6\u95F4
 #  ReadTimeout: 5000
@@ -32,4 +30,14 @@ feign:
 logging:
   level:
     com.lihao.springcloud.service.PaymentFeignService: debug
-
+spring:
+  zipkin:
+    base-url: http://192.168.126.128:9411/
+    discoveryClientEnabled: false
+    sender:
+        type: web # 设置使用 http 的方式传输数据
+  sleuth:
+    sampler:
+      probability: 1
+  application:
+    name: cloud-consumer-feign-order80
