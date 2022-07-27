@@ -1,0 +1,20 @@
+server:
+  port: 9400
+
+spring:
+  application:
+    name: cloud-sentinel-9400
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8849
+        port: 8719
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
