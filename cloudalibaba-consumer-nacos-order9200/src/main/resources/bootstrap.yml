@@ -1,0 +1,27 @@
+##server:
+##  port: 9200
+#
+#spring:
+#  application:
+#    name: cloudalibaba-consumer-nacos-order9200
+#  cloud:
+#    nacos:
+##      discovery:
+##        server-addr: localhost:8848 #Nacos服务注册中心地址
+#      config:
+#        server-addr: localhost:8848 #Nacos作为配置中心地址
+#        file-extension: yaml #指定yaml格式的配置
+#        namespace: 88ac6570-922a-429d-8112-08866cc67cf5
+#        ext-config:
+#          - data-id= server-dev.yaml
+#            group= extconfig
+#            refresh=true
+#          - data-id= cloudalibaba-consumer-nacos-order9200-dev.yaml
+#            group= extconfig
+#            refresh=true
+#
+#  profiles:
+#    active: dev
+#
+#
+

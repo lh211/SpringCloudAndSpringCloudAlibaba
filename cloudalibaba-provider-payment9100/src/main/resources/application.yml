@@ -1,0 +1,11 @@
+server:
+  port: 9100
+
+spring:
+  application:
+    name: cloudalibaba-provider-payment9100
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
